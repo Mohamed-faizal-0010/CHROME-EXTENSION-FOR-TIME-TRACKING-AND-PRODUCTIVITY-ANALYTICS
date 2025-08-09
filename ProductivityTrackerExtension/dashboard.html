@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Productivity Dashboard</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; background-color: #f4f4f4; }
+        .container { max-width: 900px; margin: 0 auto; background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .chart-section { margin-bottom: 30px; }
+        canvas { max-width: 100%; height: auto; }
+        #dailyActivitySection { margin-top: 40px; }
+        #dailyActivityList { list-style-type: none; padding: 0; }
+        #dailyActivityList li { background-color: #e9e9e9; margin-bottom: 5px; padding: 8px; border-radius: 4px; display: flex; justify-content: space-between; align-items: center; }
+        .duration { font-weight: bold; color: #007bff; }
+        .date-picker-container { margin-bottom: 20px; text-align: center; }
+        .date-picker-container label { font-weight: bold; margin-right: 10px; }
+        .date-picker-container input { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+    </style>
+    <script src="lib/chart.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Productivity Dashboard</h1>
+
+        <div class="chart-section">
+            <h2>Daily Activity Trend (Last 30 Days)</h2>
+            <canvas id="dailyTrendChart"></canvas>
+        </div>
+
+        <div class="chart-section">
+            <h2>Top 10 Most Visited Sites (Last 30 Days)</h2>
+            <canvas id="topSitesChart"></canvas>
+        </div>
+
+        <div id="dailyActivitySection">
+            <h2>Daily Breakdown for: <span id="selectedDateDisplay"></span></h2>
+            <div class="date-picker-container">
+                <label for="datePicker">Select Date:</label>
+                <input type="date" id="datePicker">
+            </div>
+            <ul id="dailyActivityList">
+                <li>No data for this date yet.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
